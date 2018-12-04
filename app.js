@@ -163,16 +163,69 @@ val = document.links[0].classList[0]; //returns the first classname of link i.e 
 console.log(val);
 
 //single document selector
-console.log(document.getElementById('task-title'));
-console.log(document.getElementById('task-title').id);
-console.log(document.getElementById('task-title').className);
+//console.log(document.getElementById('task-title'));
+//console.log(document.getElementById('task-title').id);
+//console.log(document.getElementById('task-title').className);
 //console.log(document.getElementById('task-title').style.color='red');
 document.getElementById('task-title').style.backgroundColor='black';
 document.getElementById('task-title').style.padding='5px';
 //document.getElementById('task-title').style.display='none';
-document.getElementById('task-title').innerText="hello world";
+ document.getElementById('task-title').innerText="hello world";
  document.getElementById('task-title').textContent="again hello world";
  document.getElementById('task-title').innerHTML='<span style="color:yellow">Task-List</span>';
+
+ //document queryselector for multiple element
+ let items=document.getElementsByClassName('collection-item');
+ let lis = Array.from(items);
+ lis.forEach(function(li){
+    console.log(li);
+ });
+ items[0].style.color='green';
+ items[4].textContent='my New Task';
+ querySelector= document.querySelector('.delete-item');
+ document.querySelector('li').style.color='red';
+ document.querySelector('ul li:nth-child(4)').style.color='blue';
+console.log(querySelector);
+
+let itemslist= document.querySelectorAll('ul.collection li.collection-item')// returns nodelist
+let itemslist1=Array.from(itemslist);
+itemslist1.reverse();
+itemslist1.forEach(function(item,index){
+    item.textContent=`${index}:hellooo`;
+})
+let liOdd = document.querySelectorAll('li:nth-child(odd)');
+let liEven = document.querySelectorAll('li:nth-child(even)');
+
+ let items4=document.getElementsByClassName('collection-item'); //
+ list= document.querySelector('ul.collection');
+ listItem= document.querySelector('li.collection-item:first-child ');
+
+val=list.children[3].textContent='heellllllo';
+
+
+ //console.log(listitem.childNodes);
+//console.log(listitem.childNodes[9].nodeType);
+
+
+const li = document.createElement('li');
+li.className='collection-item';
+li.id="new-item";
+//li.textContent="this is new item";
+li.style.color="green";
+// add the text node
+li.appendChild(document.createTextNode('liiist itemmm'));
+//create link
+const link = document.createElement('a');
+//add class to link
+link.className='delete-item secondary-content';
+// add X button to the link
+link.innerHTML='<i class="fa fa-remove"></i>'
+// append the list of created item in ul list
+li.appendChild(link);
+document.querySelector('ul.collection').appendChild(li);
+
+
+console.log(li);
 
 
 
