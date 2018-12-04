@@ -223,8 +223,6 @@ link.innerHTML='<i class="fa fa-remove"></i>'
 // append the list of created item in ul list
 li.appendChild(link);
 document.querySelector('ul.collection').appendChild(li);
-
-
 console.log(li);
 
 
